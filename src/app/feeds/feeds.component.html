@@ -1,0 +1,22 @@
+<form style="margin-top: 7%;">
+	<div class="form-group">
+		<h3>Select the news feed as your interest</h3>
+		<select class="form-control" (change)="getBitcoin(category)">
+			<option selected disabled>-Select-</option>
+			<option value="">Bitcoin News</option>
+	 	    <option>ABC News</option>
+		    <option>BBC News</option>
+		    <option value="bbc-sport">BBC Sport </option>
+			<option>Entertainment Weekly</option>
+	    </select>
+	</div>
+</form>
+<div class="col-md-12" style="text-align: -webkit-center;">
+	<div class="card" style="width: 60%; margin-bottom: 30px;" *ngFor="let bit of Bitcoins?.articles">
+	  <a href="{{bit.url}}" target="_blank"><img class="card-img-top" *ngIf="bit.urlToImage" src="{{bit.urlToImage}}" style="height: 250px;"></a>
+	  <div class="card-body">
+	    <h5 class="card-title" style="font-weight: 600;">{{bit.title}}</h5>
+	    <p class="card-text">{{bit.description}}</p>
+	  </div>
+	</div>
+</div>
